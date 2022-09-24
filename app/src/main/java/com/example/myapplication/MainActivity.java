@@ -35,4 +35,15 @@ public class MainActivity extends AppCompatActivity {
         Intent listtamhs = new Intent (MainActivity. this,listtugasakhir.class);
         startActivity(listtamhs);
     }
+
+    public void permintaanSeminar(View view){
+        Intent pSeminar = new Intent (MainActivity. this,listPermintaanSeminar.class);
+        startActivity(pSeminar);
+    }
+
+    public void permintaanSidang(View view){
+        Intent pSidang = new Intent (MainActivity. this,listPermintaanSidang.class);
+        startActivity(pSidang);
+    }
+
 }
