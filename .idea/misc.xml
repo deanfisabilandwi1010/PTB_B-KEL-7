@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PTB_B-KEL-7/app/src/main/res/drawable/ic_avatar1.xml" value="0.2215" />
+        <entry key="..\:/PTB_B-KEL-7/app/src/main/res/drawable/ic_avatar2.xml" value="0.2215" />
+        <entry key="..\:/PTB_B-KEL-7/app/src/main/res/drawable/ic_avatar3.xml" value="0.2215" />
+        <entry key="..\:/PTB_B-KEL-7/app/src/main/res/drawable/ic_avatar4.xml" value="0.2215" />
+        <entry key="..\:/PTB_B-KEL-7/app/src/main/res/drawable/ic_image_9.xml" value="0.2215" />
+        <entry key="..\:/PTB_B-KEL-7/app/src/main/res/drawable/ic_unand_hijau.xml" value="0.2215" />
         <entry key="..\:/PTB_B-KEL-7/app/src/main/res/layout/activity_card_view_dosen.xml" value="0.264" />
         <entry key="..\:/PTB_B-KEL-7/app/src/main/res/layout/activity_card_view_mahasiswa.xml" value="0.25" />
         <entry key="..\:/PTB_B-KEL-7/app/src/main/res/layout/activity_card_view_mahasiswa_seminar.xml" value="0.20153985507246377" />
@@ -14,6 +20,7 @@
         <entry key="..\:/PTB_B-KEL-7/app/src/main/res/layout/activity_jadwalseminar.xml" value="0.20153985507246377" />
         <entry key="..\:/PTB_B-KEL-7/app/src/main/res/layout/activity_jadwalsidang.xml" value="0.20153985507246377" />
         <entry key="..\:/PTB_B-KEL-7/app/src/main/res/layout/activity_list_dosen.xml" value="0.2" />
+        <entry key="..\:/PTB_B-KEL-7/app/src/main/res/layout/activity_list_dosen_sidang.xml" value="0.20153985507246377" />
         <entry key="..\:/PTB_B-KEL-7/app/src/main/res/layout/activity_list_permintaan_seminar.xml" value="0.20153985507246377" />
         <entry key="..\:/PTB_B-KEL-7/app/src/main/res/layout/activity_list_permintaan_sidang.xml" value="0.264" />
         <entry key="..\:/PTB_B-KEL-7/app/src/main/res/layout/activity_listtugasakhir.xml" value="0.536" />
