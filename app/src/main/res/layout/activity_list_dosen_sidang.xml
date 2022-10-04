@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
 
             android:background="@color/green"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
+            app:layout_constraintBottom_toTopOf="@+id/rv_ta"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView2"
+            android:id="@+id/rv_ta"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="8dp"

@@ -53,7 +53,7 @@
         app:srcCompat="@drawable/propil" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textNama"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -75,7 +75,7 @@
         tools:text="E-Tugas Akhir Berbasis Android"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textNama" />
 
     <TextView
         android:id="@+id/textView9"
@@ -104,7 +104,7 @@
         tools:text="13.30 WIB, 10 Oktober 2022" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textDoping"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
@@ -117,7 +117,7 @@
         tools:text="Gedung Seminar A" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textJudul_ta"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
@@ -126,7 +126,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textDoping"
         tools:text="-" />
 
     <TextView
@@ -162,7 +162,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         tools:text="Tempat :"
-        app:layout_constraintEnd_toStartOf="@+id/textView11"
+        app:layout_constraintEnd_toStartOf="@+id/textDoping"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -174,7 +174,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         tools:text="Peserta :"
-        app:layout_constraintEnd_toStartOf="@+id/textView12"
+        app:layout_constraintEnd_toStartOf="@+id/textJudul_ta"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
