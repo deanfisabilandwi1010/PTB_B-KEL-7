@@ -54,7 +54,7 @@ public class ta_mahasiswaAdapter extends RecyclerView.Adapter<ta_mahasiswaAdapte
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list_ta.size();
     }
 
     public class ta_mahasiswaViewHolder extends RecyclerView.ViewHolder {

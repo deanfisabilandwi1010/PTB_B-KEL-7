@@ -14,19 +14,20 @@ import com.example.myapplication.models.ta_mahasiswa;
 import java.util.ArrayList;
 
 public class listtugasakhir extends AppCompatActivity {
-    private RecyclerView rv_ta;
+    private RecyclerView rvta;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listtugasakhir);
 
-        rv_ta = findViewById(R.id.rv_ta);
+        rvta = findViewById(R.id.rv_ta);
 
         ta_mahasiswaAdapter adapter = new ta_mahasiswaAdapter(getlist_TA());
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
-        rv_ta.setLayoutManager(layoutManager);
-        rv_ta.setAdapter(adapter);
+        rvta.setLayoutManager(layoutManager);
+        rvta.setAdapter(adapter);
 
 
     }
