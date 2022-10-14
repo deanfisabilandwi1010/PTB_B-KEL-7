@@ -7,13 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.myapplication.Adapter.ta_mahasiswaAdapter;
 import com.example.myapplication.models.ta_mahasiswa;
 
 import java.util.ArrayList;
 
-public class listtugasakhir extends AppCompatActivity {
+public class listtugasakhir extends AppCompatActivity implements ta_mahasiswaAdapter.ItemPermintaanTAClickListener {
     private RecyclerView rvta;
 
     @Override
@@ -24,11 +25,11 @@ public class listtugasakhir extends AppCompatActivity {
         rvta = findViewById(R.id.rv_ta);
 
         ta_mahasiswaAdapter adapter = new ta_mahasiswaAdapter(getlist_TA());
+        adapter.setListener(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         rvta.setLayoutManager(layoutManager);
         rvta.setAdapter(adapter);
-
 
     }
 
@@ -56,8 +57,8 @@ public class listtugasakhir extends AppCompatActivity {
 
         list_ta.add(new ta_mahasiswa(
                 null,
-                "Dean Fisabil Andwi",
-                "SPK Pemilihan Bank Terbaik",
+                "Muhammad Zaky",
+                "SPK Lokasi Bank Sampah terbaik",
                 "Ricky Akbar,M.Kom"
         ));
 
@@ -68,13 +69,22 @@ public class listtugasakhir extends AppCompatActivity {
                 "Husnil Kamil,MT"
         ));
 
+        list_ta.add(new ta_mahasiswa(
+                null,
+                "Thomas Akram Ferdinand",
+                "Pemrograman Aplikasi Booking Android",
+                "Prof. Surya Afnarius, P.Hd"
+        ));
+
+
         return list_ta;
 
     }
 
 
-
-
-
-
+    @Override
+    public void onItemPermintaanTAClick(ta_mahasiswa taMahasiswa) {
+       Intent detailTA = new Intent(this, detailpermintaanTA.class);
+       startActivity(detailTA);
+    }
 }

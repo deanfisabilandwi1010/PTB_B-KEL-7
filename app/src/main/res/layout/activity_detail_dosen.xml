@@ -19,7 +19,7 @@
 
 
         <ImageView
-            android:id="@+id/gambar"
+            android:id="@+id/profil_dosen"
             android:layout_width="72dp"
             android:layout_height="66dp"
             android:src="@drawable/logounand"
@@ -31,7 +31,7 @@
             app:layout_constraintVertical_bias="0.453" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/textNamaDosen"
             android:layout_width="299dp"
             android:layout_height="25dp"
             android:fontFamily="sans-serif-black"
@@ -40,12 +40,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.333"
-            app:layout_constraintStart_toEndOf="@+id/gambar"
+            app:layout_constraintStart_toEndOf="@+id/profil_dosen"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.038" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/textNIK"
             android:layout_width="299dp"
             android:layout_height="25dp"
             android:fontFamily="sans-serif-black"
@@ -54,8 +54,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.375"
-            app:layout_constraintStart_toEndOf="@+id/gambar"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            app:layout_constraintStart_toEndOf="@+id/profil_dosen"
+            app:layout_constraintTop_toBottomOf="@+id/textNamaDosen"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -68,32 +68,24 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.333"
-            app:layout_constraintStart_toEndOf="@+id/gambar"
-            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            app:layout_constraintStart_toEndOf="@+id/profil_dosen"
+            app:layout_constraintTop_toBottomOf="@+id/textNIK"
             app:layout_constraintVertical_bias="0.313" />
 
         <TextView
-            android:id="@+id/textJudul_ta"
+            android:id="@+id/textBidangDosen"
             android:layout_width="299dp"
             android:layout_height="25dp"
             android:fontFamily="sans-serif"
             android:text="Bussiness Intelegence"
             android:textSize="15sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.333"
-            app:layout_constraintStart_toEndOf="@+id/gambar"
+            app:layout_constraintStart_toEndOf="@+id/profil_dosen"
             app:layout_constraintTop_toBottomOf="@+id/textView16"
             app:layout_constraintVertical_bias="0.375" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.957"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
