@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pilihdosenTA">
-
+    tools:context=".gantiDosenPem">
     <ImageView
         android:id="@+id/top"
         android:layout_width="416dp"
@@ -26,6 +25,7 @@
         android:layout_height="58dp"
         android:backgroundTint="@color/nocolor"
         android:src="@drawable/bekbek"
+        android:onClick="kembalii"
         app:layout_constraintBottom_toBottomOf="@+id/top"
         app:layout_constraintEnd_toEndOf="@+id/top"
         app:layout_constraintHorizontal_bias="0.0"
@@ -47,33 +47,17 @@
         app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top"
-        app:layout_constraintVertical_bias="0.017" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView3"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.278"
-        tools:layout_editor_absoluteX="1dp"
-        tools:listitem="@layout/activity_detail_dosen" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="330dp"
-        android:layout_height="52dp"
-        android:background="@drawable/buttonshapemain"
-        android:fontFamily="sans-serif-black"
-        android:text="Tambah"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:id="@+id/rv_doping"
+        android:layout_width="wrap_content"
+        android:layout_height="616dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView3"
-        app:layout_constraintVertical_bias="0.4" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/top"
+        app:layout_constraintVertical_bias="0.567"
+        tools:listitem="@layout/activity_detail_dosen" />
 </androidx.constraintlayout.widget.ConstraintLayout>

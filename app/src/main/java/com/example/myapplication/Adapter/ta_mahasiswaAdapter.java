@@ -1,6 +1,5 @@
 package com.example.myapplication.Adapter;
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.R;
 import com.example.myapplication.models.ta_mahasiswa;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class ta_mahasiswaAdapter extends RecyclerView.Adapter<ta_mahasiswaAdapter.ta_mahasiswaViewHolder> {
 
     ArrayList<ta_mahasiswa> list_ta = new ArrayList<>();
+
+    ItemPermintaanTAClickListener listener;
 
     public ta_mahasiswaAdapter(ArrayList<ta_mahasiswa> list_ta) {
         this.list_ta = list_ta;
@@ -31,6 +30,15 @@ public class ta_mahasiswaAdapter extends RecyclerView.Adapter<ta_mahasiswaAdapte
 
     public void setList_ta(ArrayList<ta_mahasiswa> list_ta) {
         this.list_ta = list_ta;
+    }
+
+    public ta_mahasiswaAdapter(ArrayList<ta_mahasiswa> list_ta, ItemPermintaanTAClickListener listener) {
+        this.list_ta = list_ta;
+        this.listener = listener;
+    }
+
+    public void setListener(ItemPermintaanTAClickListener listener) {
+        this.listener = listener;
     }
 
     @NonNull
@@ -57,19 +65,28 @@ public class ta_mahasiswaAdapter extends RecyclerView.Adapter<ta_mahasiswaAdapte
         return list_ta.size();
     }
 
-    public class ta_mahasiswaViewHolder extends RecyclerView.ViewHolder {
+    public interface ItemPermintaanTAClickListener{
+        void onItemPermintaanTAClick(ta_mahasiswa taMahasiswa);
+    }
 
+    public class ta_mahasiswaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ImageView gambar;
         public TextView textNama,textJudul_ta,text_doping;
         public ta_mahasiswaViewHolder(@NonNull View itemView){
             super(itemView);
-            gambar = itemView.findViewById(R.id.gambar);
+            gambar = itemView.findViewById(R.id.profil_dosen);
             textNama = itemView.findViewById(R.id.textNama);
-            textJudul_ta = itemView.findViewById(R.id.textJudul_ta);
+            textJudul_ta = itemView.findViewById(R.id.textBidangDosen);
             text_doping = itemView.findViewById(R.id.textDoping);
+
+            itemView.setOnClickListener(this);
         }
 
 
-
+        @Override
+        public void onClick(View view) {
+            ta_mahasiswa taMahasiswa = list_ta.get(getAdapterPosition());
+            listener.onItemPermintaanTAClick(taMahasiswa);
+        }
     }
 }
