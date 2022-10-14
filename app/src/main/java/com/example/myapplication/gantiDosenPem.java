@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.myapplication.Adapter.dosen_pembimbingAdapter;
+import com.example.myapplication.Adapter.ta_mahasiswaAdapter;
 import com.example.myapplication.models.dosen_pembimbing;
 
 import java.util.ArrayList;
 
-public class gantiDosenPem extends AppCompatActivity {
+public class gantiDosenPem extends AppCompatActivity implements dosen_pembimbingAdapter.itemPilihDosenOnclick {
     private RecyclerView rvdosen;
 
     @Override
@@ -25,6 +28,7 @@ public class gantiDosenPem extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         rvdosen.setLayoutManager(layoutManager);
         rvdosen.setAdapter(dosenAdapter);
+        dosenAdapter.setListener(this);
     }
 
     public ArrayList<dosen_pembimbing> getList_Dosen(){
@@ -64,6 +68,19 @@ public class gantiDosenPem extends AppCompatActivity {
 
 
         return list_dosen;
+
+    }
+
+    @Override
+    public void onItemPilihDosenClcik(dosen_pembimbing dosenPembimbing) {
+        Intent detailTA = new Intent(this, detailpermintaanTA.class);
+        detailTA.putExtra("nama_dosping", dosenPembimbing.getNamaDoping());
+        startActivity(detailTA);
+    }
+
+    public void kembalii(View view){
+        Intent kembalii = new Intent(gantiDosenPem. this,listtugasakhir.class);
+        startActivity(kembalii);
 
     }
 }

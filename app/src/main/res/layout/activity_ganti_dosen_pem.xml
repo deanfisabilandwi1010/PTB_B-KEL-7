@@ -25,6 +25,7 @@
         android:layout_height="58dp"
         android:backgroundTint="@color/nocolor"
         android:src="@drawable/bekbek"
+        android:onClick="kembalii"
         app:layout_constraintBottom_toBottomOf="@+id/top"
         app:layout_constraintEnd_toEndOf="@+id/top"
         app:layout_constraintHorizontal_bias="0.0"
