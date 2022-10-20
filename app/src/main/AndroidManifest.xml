@@ -20,6 +20,12 @@
             android:name=".detail_sidang"
             android:exported="false" />
         <activity
+            android:name=".listPermintaanSidang"
+            android:exported="false" />
+        <activity
+            android:name=".listPermintaanSeminar"
+            android:exported="false" />
+        <activity
             android:name=".permintaanTA_approved"
             android:exported="false" />
         <activity
