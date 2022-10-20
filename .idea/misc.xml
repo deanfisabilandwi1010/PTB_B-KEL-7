@@ -35,6 +35,7 @@
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7/app/src/main/res/layout/activity_pilihdosen_ta.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/drawable/buttonblmredy.xml" value="0.124" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/drawable/buttonshapemain.xml" value="0.124" />
+        <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/drawable/loginbutt.xml" value="0.124" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/drawable/sidanginfo.xml" value="0.124" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_card_view_dosen.xml" value="0.10729166666666666" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_card_view_mahasiswa_seminar.xml" value="0.22826086956521738" />
@@ -42,6 +43,7 @@
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_detail_dosen.xml" value="0.2" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_detail_mahasiswa_seminar.xml" value="0.10729166666666666" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_detail_mahasiswa_sidang.xml" value="0.10729166666666666" />
+        <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_detail_sidang.xml" value="0.2" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_detailpermintaan_ta.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_detailta.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_ganti_dosen_pem.xml" value="0.2" />
@@ -49,6 +51,7 @@
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_jadwalsidang.xml" value="0.10729166666666666" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_list_dosen_seminar.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_list_dosen_sidang.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_list_jadwalsidang.xml" value="0.2" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_list_permintaan_seminar.xml" value="0.10729166666666666" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_list_permintaan_sidang.xml" value="0.109375" />
         <entry key="..\:/Users/ASUS ID/AndroidStudioProjects/PTB_B-KEL-7_rev/app/src/main/res/layout/activity_listtugasakhir.xml" value="0.2" />

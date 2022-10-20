@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity<isloggedin> extends AppCompatActivity {
 
-    private boolean isLoggedin = false;
+    private boolean isloggedin = false;
     TextView textnamaUser;
 
     @Override
@@ -17,14 +17,17 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent mainIntent = getIntent();
-            String Username = mainIntent.getStringExtra("USERNAME");
-        boolean isLoggedin = mainIntent.getBooleanExtra("ISLOGGEDIN",true);
 
-        if(!isLoggedin){
-                Intent loginIntent = new Intent(this, login.class);
-                startActivity(loginIntent);
-                finish();
+        Intent mainIntent = getIntent();
+        String Username = mainIntent.getStringExtra("USERNAME");
+        boolean isloggedin = mainIntent.getBooleanExtra("ISLOGGEDIN",true);
+
+
+        if(!isloggedin){
+            Intent loginIntent = new Intent(this, login.class);
+            startActivity(loginIntent);
+            finish();
+
         }
 
         textnamaUser = findViewById(R.id.textnamaUser);
@@ -39,7 +42,7 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
     }
 
     public void jdwlsidang(View view){
-        Intent jdwlsid = new Intent(MainActivity. this,jadwalsidang.class);
+        Intent jdwlsid = new Intent(MainActivity. this,list_jadwalsidang.class);
         startActivity(jdwlsid);
 
     }
