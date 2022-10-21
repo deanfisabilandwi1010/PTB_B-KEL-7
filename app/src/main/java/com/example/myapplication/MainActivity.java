@@ -66,6 +66,10 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
         Intent pSidang = new Intent (MainActivity. this,listPermintaanSidang.class);
         startActivity(pSidang);
     }
+    public void tugasakhir(View view){
+        Intent listtugasakhir = new Intent(MainActivity. this,cari_mahasiswa.class);
+                startActivity(listtugasakhir);
+    }
 
 
 
