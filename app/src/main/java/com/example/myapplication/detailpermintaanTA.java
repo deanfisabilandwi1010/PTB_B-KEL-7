@@ -9,13 +9,27 @@ import android.widget.TextView;
 
 public class detailpermintaanTA extends AppCompatActivity {
 
-    String nama_dosping;
-    TextView textDospingTA;
+    String nama_dosping,nama_mahasiswa,judul_TA,dosping_old;
+    TextView textDospingTA,textMahasiswaTA,textJudulTA,textDospingOld;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailpermintaan_ta);
+
+//        Intent detailTAOld = getIntent();
+//        if(detailTAOld != null){
+//            nama_mahasiswa = detailTAOld.getStringExtra("nama_mahasiswa");
+//            judul_TA = detailTAOld.getStringExtra("judul_TA");
+//            dosping_old = detailTAOld.getStringExtra("dosping_old");
+//            textMahasiswaTA = findViewById(R.id.textNama_mahasiswa);
+//            textJudulTA = findViewById(R.id.textJudulTA);
+//            textDospingOld = findViewById(R.id.textDospingTA);
+//            textMahasiswaTA.setText(nama_mahasiswa);
+//            textJudulTA.setText(judul_TA);
+//            textDospingOld.setText(dosping_old);
+//        }
 
         Intent detailTA = getIntent();
         if(detailTA != null){

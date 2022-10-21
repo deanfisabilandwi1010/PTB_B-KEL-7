@@ -84,7 +84,10 @@ public class listtugasakhir extends AppCompatActivity implements ta_mahasiswaAda
 
     @Override
     public void onItemPermintaanTAClick(ta_mahasiswa taMahasiswa) {
-       Intent detailTA = new Intent(this, detailpermintaanTA.class);
-       startActivity(detailTA);
+       Intent detailTAOld = new Intent(this, detailpermintaanTA.class);
+        detailTAOld.putExtra("nama_mahasiswa", taMahasiswa.getNama());
+        detailTAOld.putExtra("judul_TA", taMahasiswa.getJudul());
+        detailTAOld.putExtra("dosping_old", taMahasiswa.getDoping());
+       startActivity(detailTAOld);
     }
 }

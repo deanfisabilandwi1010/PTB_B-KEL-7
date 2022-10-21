@@ -48,7 +48,7 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
     }
 
     public void jdwlseminar(View view){
-        Intent jdwlsmnr = new Intent (MainActivity. this,jadwalseminar.class);
+        Intent jdwlsmnr = new Intent (MainActivity. this,list_jadwalseminar.class);
         startActivity(jdwlsmnr);
     }
 

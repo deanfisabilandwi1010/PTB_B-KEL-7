@@ -9,9 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.myapplication.Adapter.jdwl_sidangAdapter;
-import com.example.myapplication.Adapter.ta_mahasiswaAdapter;
 import com.example.myapplication.models.jadwal_sidang;
-import com.example.myapplication.models.ta_mahasiswa;
 
 import java.util.ArrayList;
 
@@ -22,7 +20,7 @@ public class list_jadwalsidang extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_jadwalsidang);
 
-        rv_jdwlSidang = findViewById(R.id.rv_jdwlsidang);
+        rv_jdwlSidang = findViewById(R.id.rv_jdwlsid);
 
         jdwl_sidangAdapter adapter = new jdwl_sidangAdapter(getlistSidang());
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);

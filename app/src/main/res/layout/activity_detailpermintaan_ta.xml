@@ -64,6 +64,7 @@
         app:layout_constraintVertical_bias="0.497">
 
         <TextView
+            android:id="@+id/textNama_mahasiswa"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_row="0"
@@ -99,16 +100,17 @@
             android:layout_row="2" />
 
         <TextView
+            android:id="@+id/textJudulTA"
             android:layout_width="match_parent"
             android:layout_height="30dp"
+            android:layout_row="3"
+            android:layout_column="1"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="1dp"
             android:fontFamily="serif"
             android:text="SPK Pemilihan Bank Terbaik"
             android:textColor="#373434"
-            android:textSize="18sp"
-            android:layout_column="1"
-            android:layout_row="3" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textDospingTA"
