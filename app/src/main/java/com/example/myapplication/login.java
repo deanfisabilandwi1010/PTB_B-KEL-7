@@ -9,6 +9,10 @@ import android.view.View;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class login extends AppCompatActivity {
 
     TextInputEditText editUsername, editPassword;
@@ -30,4 +34,6 @@ public class login extends AppCompatActivity {
         ceklogin.putExtra("ISLOGGEDIN", true);
         startActivity(ceklogin);
     }
+
+
 }
