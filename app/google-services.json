@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "631743889917",
+    "project_id": "ptb-kel-7",
+    "storage_bucket": "ptb-kel-7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631743889917:android:32b5537322c85df219d994",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631743889917-bbrn2424vh2ivccjekd9uir69su5da6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrBKGJ6L7uORJHRue3UTpGnjiXaQBnBlM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631743889917-bbrn2424vh2ivccjekd9uir69su5da6e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
