@@ -210,7 +210,7 @@
         app:layout_constraintHorizontal_bias="0.828"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sidreq"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintVertical_bias="0.91" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_jdwlseminar"
@@ -251,14 +251,14 @@
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="52dp"
         android:backgroundTint="#ffffff"
-        android:src="@drawable/desk"
         android:onClick="listta"
+        android:src="@drawable/desk"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/listmhasiswa"
         app:layout_constraintTop_toBottomOf="@+id/btn_jdwlsidang"
-        app:layout_constraintVertical_bias="0.989" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/logout"

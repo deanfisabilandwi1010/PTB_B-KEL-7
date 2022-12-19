@@ -56,6 +56,12 @@
             android:name=".login"
             android:exported="false" />
         <activity
+            android:name=".cari_mahasiswa"
+            android:exported="false" />
+        <activity
+            android:name=".detail_ta"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

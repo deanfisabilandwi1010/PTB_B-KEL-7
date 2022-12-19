@@ -21,14 +21,17 @@ public class ta_mahasiswaAdapter extends RecyclerView.Adapter<ta_mahasiswaAdapte
     ItemPermintaanTAClickListener listener;
 
     public ta_mahasiswaAdapter(ArrayList<ta_mahasiswa> list_ta) {
+
         this.list_ta = list_ta;
     }
 
     public ArrayList<ta_mahasiswa> getList_ta() {
+
         return list_ta;
     }
 
     public void setList_ta(ArrayList<ta_mahasiswa> list_ta) {
+
         this.list_ta = list_ta;
     }
 
@@ -38,6 +41,7 @@ public class ta_mahasiswaAdapter extends RecyclerView.Adapter<ta_mahasiswaAdapte
     }
 
     public void setListener(ItemPermintaanTAClickListener listener) {
+
         this.listener = listener;
     }
 
