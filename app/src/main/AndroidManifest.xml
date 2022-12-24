@@ -62,6 +62,12 @@
             android:name=".detail_ta"
             android:exported="false" />
         <activity
+            android:name=".list_logbook"
+            android:exported="false" />
+        <activity
+            android:name=".list_peserta_seminar"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
