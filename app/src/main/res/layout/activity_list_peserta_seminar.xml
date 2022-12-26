@@ -7,6 +7,7 @@
     tools:context=".list_peserta_seminar">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_ps"
         android:layout_width="375dp"
         android:layout_height="352dp"
         android:layout_marginBottom="236dp"
