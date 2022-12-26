@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -27,7 +28,7 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
     private static final String CHANNEL_ID = "jadwal_sidang" ;
     private static final String TAG = "MainActivity-Debug";
     private boolean isloggedin = false;
-    TextView textnamaUser;
+    TextView username;
     private NotificationManagerCompat notificationManager;
 
 
@@ -36,6 +37,7 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        username = findViewById(R.id.textnamaUser);
 
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(new OnCompleteListener<String>() {
@@ -72,8 +74,15 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
 
         }
 
-        textnamaUser = findViewById(R.id.textnamaUser);
-        textnamaUser.setText(Username);
+        Intent intent = getIntent();
+
+        if(intent.getExtras() != null){
+            String passedUser = intent.getStringExtra("data");
+            username.setText("Hi,"+passedUser);
+        }
+//        textnamaUser = findViewById(R.id.textnamaUser);
+//        textnamaUser.setText(Username);
+
     }
 
 

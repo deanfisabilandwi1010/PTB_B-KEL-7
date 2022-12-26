@@ -73,19 +73,18 @@
         android:text="Password"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usname"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginbutton"
         android:layout_width="281dp"
         android:layout_height="61dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="67dp"
         android:background="@drawable/loginbutt"
         android:backgroundTint="#12D53C"
         android:fontFamily="sans-serif-black"
@@ -96,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.39" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username"
@@ -124,10 +123,9 @@
         android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logounand"
-        app:layout_constraintVertical_bias="0.463">
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:layout_constraintVertical_bias="0.245">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editPassword"
