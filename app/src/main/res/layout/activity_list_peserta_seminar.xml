@@ -10,11 +10,13 @@
         android:id="@+id/rv_ps"
         android:layout_width="375dp"
         android:layout_height="352dp"
-        android:layout_marginBottom="236dp"
+        android:layout_marginBottom="164dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="0.503"
         tools:listitem="@layout/list_peserta_seminar" />
 
     <ImageView
@@ -41,21 +43,19 @@
         android:id="@+id/textView22"
         android:layout_width="42dp"
         android:layout_height="19dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="124dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="120dp"
         android:text="Nama"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/textView23"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
     <TextView
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="108dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="96dp"
         android:text="NIM/No BP"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"

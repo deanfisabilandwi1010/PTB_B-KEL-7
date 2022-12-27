@@ -25,7 +25,7 @@ public class list_peserta_seminar extends AppCompatActivity implements pesertase
         rvps = findViewById(R.id.rv_ps);
 
         pesertaseminarAdapter adapter = new pesertaseminarAdapter(getpesertaseminar());
-       // adapter.setListener((pesertaseminarAdapter.ItempsClickListener) this);
+        adapter.setListener((pesertaseminarAdapter.ItempsClickListener) this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         rvps.setLayoutManager(layoutManager);
@@ -60,6 +60,26 @@ public class list_peserta_seminar extends AppCompatActivity implements pesertase
                 "1911523020"
         ));
 
+        list_ps.add(new pesertaseminar(
+
+                "Ahmad Fauzan",
+                "1911523020"
+        ));
+        list_ps.add(new pesertaseminar(
+
+                "Ahmad Fauzan",
+                "1911523020"
+        ));
+        list_ps.add(new pesertaseminar(
+
+                "Ahmad Fauzan",
+                "1911523020"
+        ));
+        list_ps.add(new pesertaseminar(
+
+                "Ahmad Fauzan",
+                "1911523020"
+        ));
         list_ps.add(new pesertaseminar(
 
                 "Ahmad Fauzan",
