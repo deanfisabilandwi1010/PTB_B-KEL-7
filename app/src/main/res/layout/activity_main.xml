@@ -22,8 +22,8 @@
 
     <View
         android:id="@+id/view2"
-        android:layout_width="365dp"
-        android:layout_height="203dp"
+        android:layout_width="369dp"
+        android:layout_height="238dp"
         android:background="@drawable/shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,10 +102,10 @@
         android:src="@drawable/fotodosen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.018" />
 
     <TextView
         android:id="@+id/textnamaUser"
@@ -119,10 +119,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.263" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView4"
@@ -149,12 +149,12 @@
         android:text="Profile"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/seminarreq"
@@ -198,19 +198,18 @@
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="34dp"
-        android:layout_marginBottom="68dp"
         android:background="@drawable/buttonshapemain"
         android:fontFamily="sans-serif-condensed"
         android:onClick="jdwlsidang"
         android:text="Jadwal Sidang"
         android:textColor="@color/white"
         android:textSize="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/listmhasiswa"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.828"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sidreq"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintVertical_bias="0.273" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_jdwlseminar"
@@ -247,17 +246,15 @@
         android:id="@+id/prmintaanta"
         android:layout_width="52dp"
         android:layout_height="53dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="52dp"
         android:backgroundTint="#ffffff"
-        android:src="@drawable/desk"
         android:onClick="listta"
+        android:src="@drawable/desk"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/listmhasiswa"
         app:layout_constraintTop_toBottomOf="@+id/btn_jdwlsidang"
-        app:layout_constraintVertical_bias="0.989" />
+        app:layout_constraintVertical_bias="0.582" />
 
     <ImageButton
         android:id="@+id/logout"

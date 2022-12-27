@@ -27,7 +27,7 @@ import retrofit2.Response;
 public class login extends AppCompatActivity {
 
     TextInputEditText editUsername, editPassword;
-    Button loginbutton;
+    Button login;
     String username, password;
 
     @Override
@@ -37,9 +37,9 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         editUsername = findViewById(R.id.editUsername);
         editPassword = findViewById(R.id.editPassword);
-        loginbutton = findViewById(R.id.loginbutton);
+        login = findViewById(R.id.loginbutton);
 
-        loginbutton.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 username = editUsername.getText().toString();
@@ -54,17 +54,17 @@ public class login extends AppCompatActivity {
                         String message = null;
                         JSONObject jsonObject = null;
                         LoginResponse loginResponse = response.body();
-                        if(loginResponse.getStatus() != "")
+                        if(loginResponse != null)
                         {
-                            String token = loginResponse.getAuthorisation().getToken();
+                            String tokenlogin = loginResponse.getAuthorisation().getToken();
                             String name = loginResponse.getUser().getName();
                             String username2 = loginResponse.getUser().getUsername();
                             String email = loginResponse.getUser().getEmail();
 
-                            Log.i("success", token);
+                            Log.i("success", tokenlogin);
                             SharedPreferences sharedPreferences = getSharedPreferences("com.example.myapplication.SHARED_KEY",MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("token",token);
+                            editor.putString("tokenLogin",tokenlogin);
                             editor.putString("name",name);
                             editor.putString("username",username2);
                             editor.putString("email",email);
@@ -76,8 +76,8 @@ public class login extends AppCompatActivity {
                         }
                         else
                         {
-                            message = loginResponse.getStatus();
-                            Toast.makeText(login.this, message , Toast.LENGTH_SHORT).show();
+
+                            Toast.makeText(login.this, "username atau password salah" , Toast.LENGTH_SHORT).show();
                         }
                     }
                     @Override
