@@ -11,6 +11,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,9 +19,16 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.datamodels.LogoutResponse;
+import com.example.myapplication.retrofit.RetrofitClient;
+import com.example.myapplication.retrofit.apiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity<isloggedin> extends AppCompatActivity {
 
@@ -28,6 +36,7 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
     private static final String TAG = "MainActivity-Debug";
     private boolean isloggedin = false;
     TextView textnamaUser;
+    String gettoken,tokenLogin;
     private NotificationManagerCompat notificationManager;
 
 
@@ -74,12 +83,37 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
 
         textnamaUser = findViewById(R.id.textnamaUser);
         textnamaUser.setText(Username);
+
+
     }
 
 
     public void logout(View view){
-        Intent keluar = new Intent(MainActivity. this,login.class);
-        startActivity(keluar);
+        apiClient mainInterface = RetrofitClient.getService();
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.myapplication.SHARED_KEY",MODE_PRIVATE);
+        gettoken = sharedPreferences.getString("tokenLogin","");
+        tokenLogin = "Bearer " + gettoken;
+
+        Call<LogoutResponse> call = mainInterface.logout(tokenLogin);
+        call.enqueue(new Callback<LogoutResponse>() {
+            @Override
+            public void onResponse(Call<LogoutResponse> call, Response<LogoutResponse> response) {
+
+                LogoutResponse logoutResponse = response.body();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.remove("tokenLogin");
+                editor.apply();
+                finish();
+                Toast.makeText(MainActivity.this, logoutResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, login.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onFailure(Call<LogoutResponse> call, Throwable t) {
+
+            }
+        });
 
     }
 
@@ -155,5 +189,7 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
             notificationManager.createNotificationChannel(channel);
         }
     }
+
+
 
 }
