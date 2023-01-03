@@ -10,9 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.datamodels.ThesisItem;
 import com.example.myapplication.models.ta_mahasiswa;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ta_mahasiswaAdapter extends RecyclerView.Adapter<ta_mahasiswaAdapter.ta_mahasiswaViewHolder> {
 
@@ -20,8 +22,9 @@ public class ta_mahasiswaAdapter extends RecyclerView.Adapter<ta_mahasiswaAdapte
 
     ItemPermintaanTAClickListener listener;
 
-    public ta_mahasiswaAdapter(ArrayList<ta_mahasiswa> list_ta) {
-        this.list_ta = list_ta;
+    private List<ThesisItem> itemList;
+    public ta_mahasiswaAdapter( List<ThesisItem> itemList) {
+        this.itemList = itemList;
     }
 
     public ArrayList<ta_mahasiswa> getList_ta() {
@@ -31,11 +34,11 @@ public class ta_mahasiswaAdapter extends RecyclerView.Adapter<ta_mahasiswaAdapte
     public void setList_ta(ArrayList<ta_mahasiswa> list_ta) {
         this.list_ta = list_ta;
     }
-
-    public ta_mahasiswaAdapter(ArrayList<ta_mahasiswa> list_ta, ItemPermintaanTAClickListener listener) {
-        this.list_ta = list_ta;
-        this.listener = listener;
-    }
+//
+//    public ta_mahasiswaAdapter(ArrayList<ta_mahasiswa> list_ta, ItemPermintaanTAClickListener listener) {
+//        this.list_ta = list_ta;
+//        this.listener = listener;
+//    }
 
     public void setListener(ItemPermintaanTAClickListener listener) {
         this.listener = listener;
@@ -47,22 +50,23 @@ public class ta_mahasiswaAdapter extends RecyclerView.Adapter<ta_mahasiswaAdapte
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.activity_detailta, parent, false);
 
-
         return new ta_mahasiswaViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ta_mahasiswaViewHolder holder, int position) {
-    ta_mahasiswa ta_mahasiswa = list_ta.get(position);
+    ThesisItem ta_mahasiswa = itemList.get(position);
     holder.gambar.setImageResource(R.drawable.fotodosen);
-    holder.textNama.setText(ta_mahasiswa.getNama());
-    holder.textJudul_ta.setText(ta_mahasiswa.getJudul());
-    holder.text_doping.setText(ta_mahasiswa.getDoping());
+    holder.textJudul_ta.setText(ta_mahasiswa.getTitle());
+    holder.textidmhs.setText(ta_mahasiswa.getStudentId());
+    holder.textNIM.setText(ta_mahasiswa.getId());
+    holder.textyear.setText(ta_mahasiswa.getStatus());
+
     }
 
     @Override
     public int getItemCount() {
-        return list_ta.size();
+        return itemList.size();
     }
 
     public interface ItemPermintaanTAClickListener{
@@ -71,13 +75,15 @@ public class ta_mahasiswaAdapter extends RecyclerView.Adapter<ta_mahasiswaAdapte
 
     public class ta_mahasiswaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ImageView gambar;
-        public TextView textNama,textJudul_ta,text_doping;
+        public TextView textNama,textJudul_ta,textNIM,textidmhs,textyear;
         public ta_mahasiswaViewHolder(@NonNull View itemView){
             super(itemView);
             gambar = itemView.findViewById(R.id.profil_dosen);
-            textNama = itemView.findViewById(R.id.textNama);
-            textJudul_ta = itemView.findViewById(R.id.textBidangDosen);
-            text_doping = itemView.findViewById(R.id.textDoping);
+            textJudul_ta = itemView.findViewById(R.id.text_judulTA);
+            textNIM = itemView.findViewById(R.id.textNIM);
+//
+
+
 
             itemView.setOnClickListener(this);
         }

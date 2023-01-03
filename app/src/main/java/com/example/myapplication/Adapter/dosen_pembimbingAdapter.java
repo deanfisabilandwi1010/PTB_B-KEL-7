@@ -83,7 +83,7 @@ public class dosen_pembimbingAdapter extends RecyclerView.Adapter<dosen_pembimbi
             profil = itemView.findViewById(R.id.profil_dosen);
             textNamaDosen = itemView.findViewById(R.id.textNamaDosen);
             textNIK = itemView.findViewById(R.id.textNIK);
-            textBidangDosen = itemView.findViewById(R.id.textBidangDosen);
+            textBidangDosen = itemView.findViewById(R.id.text_judulTA);
 
             itemView.setOnClickListener(this);
 
