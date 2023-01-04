@@ -72,9 +72,8 @@ public class listPermintaanSidang extends AppCompatActivity {
         call.enqueue(new Callback<SeminarsItem>() {
             @Override
             public void onResponse(Call<SeminarsItem> call, Response<SeminarsItem> response) {
-
-//                List<SeminarsItem> sidangList = (List<SeminarsItem>) response.body().getThesis();
-//                adapter = new SidangAdapter(listPermintaanSidang.this, sidangList);
+                List<SeminarsItem> sidangList = (List<SeminarsItem>) response.body().getThesis();
+                adapter = new SidangAdapter(listPermintaanSidang.this, sidangList);
 
 
 

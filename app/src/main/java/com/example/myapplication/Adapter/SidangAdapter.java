@@ -24,7 +24,7 @@ public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.ListViewHo
     private Context context;
     private List<SeminarsItem> seminarsItemList;
 
-    public SidangAdapter(Context context, List<SeminarsItem> resultList){
+    public SidangAdapter(Context context, List<SeminarsItem> seminarsItemList){
 
         this.context = context;
         this.seminarsItemList = seminarsItemList;
@@ -52,14 +52,14 @@ public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.ListViewHo
 ////                .apply(new RequestOptions().override(80, 80))
 //                .into(holder.imgPhoto);
 
-        SeminarsItem data = (SeminarsItem) seminarsItemList.get(position);
-        Glide.with(holder.itemView.getContext())
-                .load(data.getPhoto())
-                .apply(new RequestOptions().override(80, 80))
-                .into(holder.imgPhoto);
-        holder.rvNama.setText(data.getThesis().getStudent(position).getName());
-        holder.rvJudul.setText(data.getThesis().getTitle());
-        holder.rvDate.setText(data.getThesis().getUpdatedAt());
+//        SeminarsItem data = (SeminarsItem) seminarsItemList.get(position);
+//        Glide.with(holder.itemView.getContext())
+//                .load(seminarsItemList.getPhoto())
+//                .apply(new RequestOptions().override(80, 80))
+//                .into(holder.imgPhoto);
+        holder.rvNama.setText(seminarsItemList.get(position).getThesis().getStudent(position).getName());
+        holder.rvJudul.setText(seminarsItemList.get(position).getThesis().getTitle());
+        holder.rvDate.setText(seminarsItemList.get(position).getThesis().getUpdatedAt());
 
     }
 
