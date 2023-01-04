@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -16,9 +17,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.Adapter.SidangAdapter;
 import com.example.myapplication.datamodels.LogoutResponse;
 import com.example.myapplication.retrofit.RetrofitClient;
 import com.example.myapplication.retrofit.apiClient;
@@ -38,6 +41,10 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
     TextView textnamaUser;
     String gettoken,tokenLogin;
     private NotificationManagerCompat notificationManager;
+
+
+
+
 
 
     @Override
@@ -83,6 +90,7 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
 
         textnamaUser = findViewById(R.id.textnamaUser);
         textnamaUser.setText(Username);
+
 
 
     }
@@ -189,6 +197,10 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
             notificationManager.createNotificationChannel(channel);
         }
     }
+
+
+
+
 
 
 

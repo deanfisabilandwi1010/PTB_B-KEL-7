@@ -31,7 +31,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/nama"
+            android:id="@+id/rvNama"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -46,7 +46,7 @@
             tools:text="Sefza Auma" />
 
         <TextView
-            android:id="@+id/judul"
+            android:id="@+id/rvJudul"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -55,11 +55,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/avatar"
-            app:layout_constraintTop_toBottomOf="@+id/nama"
+            app:layout_constraintTop_toBottomOf="@+id/rvNama"
             tools:text=" Layanan E-Tugas Akhir Berbasis Android  " />
 
         <TextView
-            android:id="@+id/date"
+            android:id="@+id/rvDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -69,7 +69,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/avatar"
-            app:layout_constraintTop_toBottomOf="@+id/judul"
+            app:layout_constraintTop_toBottomOf="@+id/rvJudul"
             tools:text="Selasa, 8 Oktober 2022" />
 
         <CheckBox
