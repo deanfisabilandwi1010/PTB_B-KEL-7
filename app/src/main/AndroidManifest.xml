@@ -57,7 +57,16 @@
             android:name=".listtugasakhir"
             android:exported="false" />
         <activity
-            android:name=".detailta"
+            android:name=".cari_mahasiswa"
+            android:exported="false" />
+        <activity
+            android:name=".detail_ta"
+            android:exported="false" />
+        <activity
+            android:name=".list_logbook"
+            android:exported="false" />
+        <activity
+            android:name=".list_peserta_seminar"
             android:exported="false" />
         <activity
             android:name=".jadwalseminar"

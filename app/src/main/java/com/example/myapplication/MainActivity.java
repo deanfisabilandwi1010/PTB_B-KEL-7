@@ -64,6 +64,8 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
                     }
                 });
 
+
+
         notificationManager = NotificationManagerCompat.from(this);
 
         createNotificationChannel();
@@ -177,6 +179,10 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
     public void permintaanSidang(View view){
         Intent pSidang = new Intent (MainActivity. this,listPermintaanSidang.class);
         startActivity(pSidang);
+    }
+    public void tugasakhir(View view){
+        Intent listtugasakhir = new Intent(MainActivity. this,cari_mahasiswa.class);
+        startActivity(listtugasakhir);
     }
 
     private void createNotificationChannel() {

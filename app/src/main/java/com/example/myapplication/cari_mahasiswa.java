@@ -2,33 +2,71 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.models.ThesesData;
+import com.example.myapplication.datamodels.Thesis;
 import com.example.myapplication.Adapter.list_mahasiswaAdapter;
 import com.example.myapplication.models.list_mahasiswa_ta;
-import com.example.myapplication.models.ta_mahasiswa;
+import com.example.myapplication.retrofit.RetrofitClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.android.gms.tasks.Task;
+
 
 import java.util.ArrayList;
+import java.util.List;
+import retrofit2.Call;
+import retrofit2.Callback;
+
+import retrofit2.Response;
+
+
 
 public class cari_mahasiswa extends AppCompatActivity implements list_mahasiswaAdapter.itemMahasiswaClickListener{
     private RecyclerView rvcm;
+    private String token;
+    String getToken;
+
+    private static final String TAG = "cari_mahasiswa-Debug";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cari_mahasiswa);
 
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+
+                        // Get new FCM registration token
+                        token = task.getResult();
+
+                        // Log and toast
+                        Log.d(TAG, token);
+                        Toast.makeText(cari_mahasiswa.this, token, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
         rvcm = findViewById(R.id.rv_cm);
 
-        list_mahasiswaAdapter adapter = new list_mahasiswaAdapter(getlist_mahasiswa());
-        adapter.setListener(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-
         rvcm.setLayoutManager(layoutManager);
-        rvcm.setAdapter(adapter);
+
+        getlist_mahasiswa();
     }
 
     public void detail_ta(View view) {
@@ -38,44 +76,33 @@ public class cari_mahasiswa extends AppCompatActivity implements list_mahasiswaA
 
     }
 
-    public ArrayList<list_mahasiswa_ta> getlist_mahasiswa(){
-        ArrayList<list_mahasiswa_ta> list_ta = new ArrayList<>();
+    public ArrayList<Thesis> getlist_mahasiswa(){
 
-        list_ta.add(new list_mahasiswa_ta(
-                null,
-                "Dean Fisabil Andwi",
-                "SPK Pemilihan Bank Terbaik",
-                "Ricky Akbar,MT"
-        ));
+        RetrofitClient config = new RetrofitClient();
+        ArrayList<Thesis> list_ta = new ArrayList<>();
+        System.out.println("token saya : "+token);
+        //panggil client
+        Call<ThesesData> call = config.configRetrofit().getListTA("Bearer "+"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vcHRiLWFwaS5odXNuaWxrYW1pbC5teS5pZC9hcGkvbG9naW4iLCJpYXQiOjE2NzI4NTQ0OTIsImV4cCI6MTY3Mjg1ODA5MiwibmJmIjoxNjcyODU0NDkyLCJqdGkiOiJrZEpBMndXVkxhSExwVHYyIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.0JOETD8nV5mbPktUAZaXK09s2hdcjI-Dv7tC3c_C03E");
+        call.enqueue(new Callback<ThesesData>() {
+            @Override
+            public void onResponse(Call<ThesesData> call, Response<ThesesData> response) {
+                ThesesData thesesData = response.body();
+                List<Thesis>listTA = thesesData.getTheses();
+                ArrayList<Thesis>list_ta = new ArrayList<>();
+                for(Thesis thesis : listTA){
+                    list_ta.add(thesis);
+                }
+                list_mahasiswaAdapter adapter = new list_mahasiswaAdapter(list_ta);
+                rvcm.setAdapter(adapter);
+                adapter.setListener(cari_mahasiswa.this);
+                System.out.println("data TA : "+list_ta);
+            }
 
-        list_ta.add(new list_mahasiswa_ta(
-                null,
-                "Sefza Auma Tiang Alam",
-                "SPK Pemilihan Kopi Terbaik",
-                "Ricky Akbar,M.Kom"
-        ));
-
-        list_ta.add(new list_mahasiswa_ta(
-                null,
-                "Muhammad Zaky",
-                "SPK Lokasi Bank Sampah terbaik",
-                "Ricky Akbar,M.Kom"
-        ));
-
-        list_ta.add(new list_mahasiswa_ta(
-                null,
-                "Muhammad Afif",
-                "Pembuatan E-Commerce AXIS",
-                "Husnil Kamil,MT"
-        ));
-
-        list_ta.add(new list_mahasiswa_ta(
-                null,
-                "Thomas Akram Ferdinand",
-                "Pemrograman Aplikasi Booking Android",
-                "Prof. Surya Afnarius, P.Hd"
-        ));
-
+            @Override
+            public void onFailure(Call<ThesesData> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return list_ta;
 
@@ -83,11 +110,11 @@ public class cari_mahasiswa extends AppCompatActivity implements list_mahasiswaA
 
 
     @Override
-    public void onItemListMahasiswa(list_mahasiswa_ta listMahasiswaTa) {
+    public void onItemListMahasiswa(Thesis listMahasiswaTa) {
         Intent detailTAOld = new Intent(this, detail_ta.class);
-        detailTAOld.putExtra("nama_mahasiswa", listMahasiswaTa.getNamamahasiswa());
-        detailTAOld.putExtra("judul_TA", listMahasiswaTa.getJudul_ta());
-        detailTAOld.putExtra("dosping_old", listMahasiswaTa.getPembimbing());
+        detailTAOld.putExtra("nama_mahasiswa", listMahasiswaTa.getStudentName());
+        detailTAOld.putExtra("judul_TA", listMahasiswaTa.getTitle());
+        detailTAOld.putExtra("dosping_old", listMahasiswaTa.getStudentNim());
         startActivity(detailTAOld);
     }
 }

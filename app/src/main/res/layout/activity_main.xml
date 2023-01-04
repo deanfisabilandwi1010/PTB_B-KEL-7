@@ -233,6 +233,7 @@
         android:id="@+id/listmhasiswa"
         android:layout_width="52dp"
         android:layout_height="53dp"
+        android:onClick="tugasakhir"
         android:backgroundTint="#ffffff"
         android:src="@drawable/user"
         app:layout_constraintBottom_toBottomOf="parent"

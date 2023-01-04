@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.datamodels.Thesis;
 import com.example.myapplication.models.list_mahasiswa_ta;
 import com.example.myapplication.models.ta_mahasiswa;
 
@@ -18,11 +19,11 @@ import java.util.ArrayList;
 public class list_mahasiswaAdapter extends RecyclerView.Adapter<list_mahasiswaAdapter.list_mahasiswaViewHolder> {
 
 
-    ArrayList<list_mahasiswa_ta> list_mahasiswa = new ArrayList<>();
+    ArrayList<Thesis> list_mahasiswa = new ArrayList<>();
 
     itemMahasiswaClickListener listener;
 
-    public list_mahasiswaAdapter(ArrayList<list_mahasiswa_ta> list_mahasiswa) {
+    public list_mahasiswaAdapter(ArrayList<Thesis> list_mahasiswa) {
         this.list_mahasiswa = list_mahasiswa;
     }
 
@@ -43,7 +44,7 @@ public class list_mahasiswaAdapter extends RecyclerView.Adapter<list_mahasiswaAd
     }
 
     public interface itemMahasiswaClickListener{
-        void onItemListMahasiswa(list_mahasiswa_ta listMahasiswaTa);
+        void onItemListMahasiswa(Thesis listMahasiswaTa);
     }
 
 
@@ -51,11 +52,11 @@ public class list_mahasiswaAdapter extends RecyclerView.Adapter<list_mahasiswaAd
     @Override
     public void onBindViewHolder(@NonNull list_mahasiswaViewHolder holder, int position) {
 
-        list_mahasiswa_ta list_mahasiswa_ta = list_mahasiswa.get(position);
+        Thesis list_mahasiswa_ta = list_mahasiswa.get(position);
         holder.imagelist_mahasiswa_ta.setImageResource(R.drawable.ic_avatar1);
-        holder.textnamamahasiswa.setText(list_mahasiswa_ta.getNamamahasiswa());
-        holder.textjudul_ta.setText(list_mahasiswa_ta.getJudul_ta());
-        holder.textpembimbing.setText(list_mahasiswa_ta.getPembimbing());
+        holder.textnamamahasiswa.setText(list_mahasiswa_ta.getStudentName());
+        holder.textjudul_ta.setText(list_mahasiswa_ta.getTitle());
+        holder.textpembimbing.setText(list_mahasiswa_ta.getStudentNim());
 
 
     }
@@ -84,7 +85,7 @@ public class list_mahasiswaAdapter extends RecyclerView.Adapter<list_mahasiswaAd
 
         @Override
         public void onClick(View view) {
-            list_mahasiswa_ta taMahasiswa = list_mahasiswa.get(getAdapterPosition());
+            Thesis taMahasiswa = list_mahasiswa.get(getAdapterPosition());
             listener.onItemListMahasiswa(taMahasiswa);
         }
     }
