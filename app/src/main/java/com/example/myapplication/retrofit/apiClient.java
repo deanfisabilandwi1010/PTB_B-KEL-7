@@ -4,6 +4,7 @@ import com.example.myapplication.datamodels.LoginResponse;
 import com.example.myapplication.datamodels.LogoutResponse;
 import com.example.myapplication.datamodels.PermintaanTAResponse;
 import com.example.myapplication.datamodels.Student;
+import com.example.myapplication.datamodels.TAResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -29,6 +30,13 @@ public interface apiClient {
             @Header("Authorization")String token
 
     );
+
+    @GET("/api/admin/theses")
+    Call<TAResponse> responseTA (
+            @Header("Authorization")String token
+
+    );
+
 
 
 }

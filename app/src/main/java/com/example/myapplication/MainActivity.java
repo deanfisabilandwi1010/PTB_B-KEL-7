@@ -179,6 +179,11 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
         startActivity(pSidang);
     }
 
+    public void listMHS(View view){
+        Intent listmhsa = new Intent (MainActivity. this,listMahasiswaTA.class);
+        startActivity(listmhsa);
+    }
+
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "notifikasi sidang";
