@@ -5,7 +5,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    private static  apiClient service;
+    public static  apiClient service;
     public static apiClient getService() {
 
         if (service == null) {

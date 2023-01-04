@@ -2,7 +2,7 @@ package com.example.myapplication.datamodels;
 
 import com.google.gson.annotations.SerializedName;
 
-public class User{
+public class  User{
 
 	@SerializedName("role")
 	private Object role;
