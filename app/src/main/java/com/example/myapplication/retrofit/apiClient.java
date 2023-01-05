@@ -2,6 +2,7 @@ package com.example.myapplication.retrofit;
 
 import com.example.myapplication.datamodels.LoginResponse;
 import com.example.myapplication.datamodels.LogoutResponse;
+import com.example.myapplication.datamodels.SemhasResponse;
 import com.example.myapplication.datamodels.SeminarResponse;
 
 import retrofit2.Call;
@@ -25,6 +26,11 @@ public interface apiClient {
 
     @GET("/api/admin/thesis/seminar-submissions")
     Call<SeminarResponse> getSidang(
+            @Header("Authorization") String token
+    );
+
+    @GET("api/admin/thesis/trial-submissions")
+    Call<SemhasResponse> getSemhas(
             @Header("Authorization") String token
     );
 

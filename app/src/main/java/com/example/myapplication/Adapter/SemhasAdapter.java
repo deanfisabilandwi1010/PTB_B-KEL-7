@@ -1,5 +1,6 @@
 package com.example.myapplication.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.myapplication.R;
 import com.example.myapplication.datamodels.SeminarsItem;
 import com.example.myapplication.listPermintaanSeminar;
@@ -17,15 +20,16 @@ import com.example.myapplication.listPermintaanSidang;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
-public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.ListViewHolder> {
+public class SemhasAdapter extends RecyclerView.Adapter<SemhasAdapter.ListViewHolder> {
 
 
     private List<SeminarsItem> seminarsItemList = new ArrayList<>();
 
 
-    public SidangAdapter(listPermintaanSidang listPermintaanSidang, List<SeminarsItem> seminarsItemList){
+    public SemhasAdapter(listPermintaanSeminar listPermintaanSeminar, List<SeminarsItem> seminarsItemList){
         this.seminarsItemList = seminarsItemList;
         notifyDataSetChanged();
     }
@@ -40,7 +44,7 @@ public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.ListViewHo
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_card_view_mahasiswa_sidang, parent, false);
+                .inflate(R.layout.activity_card_view_mahasiswa_seminar, parent, false);
 
 //        View view;
 //        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
@@ -67,11 +71,11 @@ public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.ListViewHo
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
 
         SeminarsItem sidang = seminarsItemList.get(position);
-        holder.imgPhoto.setImageResource(R.drawable.ic_avatar4);
+        holder.imgPhoto.setImageResource(R.drawable.ic_avatar3);
         String str1 = sidang.getThesis().getStudent().getName();
         String str2 = str1.toLowerCase();
-        holder.rvNama.setText(StringFormatter.capitalizeWord(str2));
-        holder.rvJudul.setText(sidang.getThesis().getTitle());
+        holder.nama.setText(StringFormatter.capitalizeWord(str2));
+        holder.judul.setText(sidang.getThesis().getTitle());
 
 
 
@@ -98,16 +102,16 @@ public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.ListViewHo
     public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView imgPhoto;
-        TextView rvDate, rvNama, rvJudul;
+        TextView date, nama, judul;
 
 
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.avatar);
-            rvNama = itemView.findViewById(R.id.rvNama);
-            rvJudul = itemView.findViewById(R.id.rvJudul);
-            rvDate = itemView.findViewById(R.id.rvDate);
+            nama = itemView.findViewById(R.id.nama);
+            judul = itemView.findViewById(R.id.judul);
+            date = itemView.findViewById(R.id.date);
 
             itemView.setOnClickListener(this);
         }
