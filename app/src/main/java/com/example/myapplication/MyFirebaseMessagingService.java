@@ -45,7 +45,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             notificationManagerCompat.from(this).createNotificationChannel(channel);
         }
 
-        Intent resultIntent = new Intent(this, list_jadwalsidang.class);
+        Intent resultIntent = new Intent(this, login.class);
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
         stackBuilder.addNextIntentWithParentStack(resultIntent);

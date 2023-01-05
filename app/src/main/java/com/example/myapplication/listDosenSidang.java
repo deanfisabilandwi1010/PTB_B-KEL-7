@@ -9,7 +9,7 @@ public class listDosenSidang extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_dosen_sidang);
+        setContentView(R.layout.activity_list_dosen_seminar);
     }
 
 

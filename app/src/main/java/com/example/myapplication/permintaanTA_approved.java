@@ -14,10 +14,6 @@ public class permintaanTA_approved extends AppCompatActivity {
         setContentView(R.layout.activity_permintaan_ta_approved);
     }
 
-    public void bekkk(View view){
-        Intent bekkk = new Intent(permintaanTA_approved. this,listtugasakhir.class);
-        startActivity(bekkk);
 
-    }
 
 }

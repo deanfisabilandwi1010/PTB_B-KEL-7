@@ -1,6 +1,5 @@
 package com.example.myapplication.Adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,19 +7,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.myapplication.R;
 import com.example.myapplication.datamodels.SeminarsItem;
+import com.example.myapplication.detailMahasiswaSeminar;
 import com.example.myapplication.listPermintaanSeminar;
-import com.example.myapplication.listPermintaanSidang;
 
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 
 public class SemhasAdapter extends RecyclerView.Adapter<SemhasAdapter.ListViewHolder> {
@@ -33,6 +30,7 @@ public class SemhasAdapter extends RecyclerView.Adapter<SemhasAdapter.ListViewHo
         this.seminarsItemList = seminarsItemList;
         notifyDataSetChanged();
     }
+
 
     ItemSeminarClickListener listener;
 
@@ -51,6 +49,9 @@ public class SemhasAdapter extends RecyclerView.Adapter<SemhasAdapter.ListViewHo
 //        view = inflater.inflate(R.layout.activity_list_permintaan_sidang, parent, false);
 
         //SidangAdapter.ListViewHolder viewHolder = new SidangAdapter.ListViewHolder(view);
+
+
+
         return new ListViewHolder(view);
 
     }
@@ -64,7 +65,7 @@ public class SemhasAdapter extends RecyclerView.Adapter<SemhasAdapter.ListViewHo
     }
 
     public interface ItemSeminarClickListener{
-        void onItemPermintaanClick(SeminarsItem sidang );
+        void onItemPermintaanClick(SeminarsItem seminar );
     }
 
     @Override
@@ -75,7 +76,8 @@ public class SemhasAdapter extends RecyclerView.Adapter<SemhasAdapter.ListViewHo
         String str1 = sidang.getThesis().getStudent().getName();
         String str2 = str1.toLowerCase();
         holder.nama.setText(StringFormatter.capitalizeWord(str2));
-        holder.judul.setText(sidang.getThesis().getTitle());
+        holder.nim.setText(sidang.getThesis().getStudent().getNim());
+        holder.date.setText(sidang.getThesis().getUpdatedAt());
 
 
 
@@ -102,24 +104,26 @@ public class SemhasAdapter extends RecyclerView.Adapter<SemhasAdapter.ListViewHo
     public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView imgPhoto;
-        TextView date, nama, judul;
+        TextView date, nama, nim;
+        ConstraintLayout constraintLayout;
 
 
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgPhoto = itemView.findViewById(R.id.avatar);
+            imgPhoto = itemView.findViewById(R.id.imgDosen);
             nama = itemView.findViewById(R.id.nama);
-            judul = itemView.findViewById(R.id.judul);
+            nim = itemView.findViewById(R.id.rvnim);
             date = itemView.findViewById(R.id.date);
+            constraintLayout = itemView.findViewById(R.id.layoutKonstrain);
 
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            SeminarsItem sidang = seminarsItemList.get(getAdapterPosition());
-            listener.onItemPermintaanClick(sidang);
+            SeminarsItem seminar = seminarsItemList.get(getAdapterPosition());
+            listener.onItemPermintaanClick(seminar);
 
         }
     }

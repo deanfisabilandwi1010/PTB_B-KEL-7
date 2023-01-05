@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.SearchView;
 import android.widget.TextView;
 
@@ -30,7 +32,7 @@ import retrofit2.Response;
 
 
 
-public class listPermintaanSeminar extends AppCompatActivity {
+public class listPermintaanSeminar extends AppCompatActivity implements SemhasAdapter.ItemSeminarClickListener {
 //    private RecyclerView rvSidang;
 //    private ArrayList<list_mahasiswa_sidang> list = new ArrayList<>();
 
@@ -40,7 +42,7 @@ public class listPermintaanSeminar extends AppCompatActivity {
     RecyclerView recyclerView;
 
     TextView textnamaUser;
-    String gettoken,tokenLogin;
+    String gettoken, tokenLogin;
 
 
     @Override
@@ -63,10 +65,10 @@ public class listPermintaanSeminar extends AppCompatActivity {
 //
 //
 //    }
-    public void CallRetrofit(){
+    public void CallRetrofit() {
         apiClient mainInterface = RetrofitClient.getService();
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.myapplication.SHARED_KEY",MODE_PRIVATE);
-        gettoken = sharedPreferences.getString("tokenLogin","");
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.example.myapplication.SHARED_KEY", MODE_PRIVATE);
+        gettoken = sharedPreferences.getString("tokenLogin", "");
         tokenLogin = "Bearer " + gettoken;
 
         Call<SemhasResponse> call = RetrofitClient.getService().getSemhas(tokenLogin);
@@ -75,9 +77,9 @@ public class listPermintaanSeminar extends AppCompatActivity {
             public void onResponse(Call<SemhasResponse> call, Response<SemhasResponse> response) {
 
                 SemhasResponse seminars = response.body();
-                if (seminars != null){
+                if (seminars != null) {
                     List<SeminarsItem> seminarsItemList = seminars.getSeminars();
-                    adapter = new SemhasAdapter(listPermintaanSeminar.this, seminarsItemList );
+                    adapter = new SemhasAdapter(listPermintaanSeminar.this, seminarsItemList);
 
                     recyclerView.setAdapter(adapter);
 
@@ -111,6 +113,18 @@ public class listPermintaanSeminar extends AppCompatActivity {
 //        }
         });
 
+
+    }
+
+    @Override
+    public void onItemPermintaanClick(SeminarsItem seminar) {
+        Intent detailSidang = new Intent(this, detailMahasiswaSeminar.class);
+        detailSidang.putExtra("Nama", seminar.getThesis().getStudent().getName());
+        detailSidang.putExtra("NIM", seminar.getThesis().getStudent().getNim());
+        detailSidang.putExtra("Waktu", seminar.getThesis().getUpdatedAt());
+        detailSidang.putExtra("Judul", seminar.getThesis().getTitle());
+        detailSidang.putExtra("Abstrak", seminar.getThesis().getJsonMemberAbstract());
+        startActivity(detailSidang);
     }
 
 
@@ -119,4 +133,10 @@ public class listPermintaanSeminar extends AppCompatActivity {
 //        SidangAdapter listClubAdapter = new SidangAdapter(list);
 //        rvSidang.setAdapter(listClubAdapter);
 //    }
+
+//    public void tambahDosenSeminar(View view){
+//        Intent dosenSemhas = new Intent (listPermintaanSeminar. this,listDosenSeminar.class);
+//        startActivity(dosenSemhas);
+//    }
+
 }

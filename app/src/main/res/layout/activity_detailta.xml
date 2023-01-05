@@ -29,7 +29,7 @@
             app:layout_constraintVertical_bias="0.421" />
 
         <TextView
-            android:id="@+id/textNama"
+            android:id="@+id/namaDetail"
             android:layout_width="299dp"
             android:layout_height="25dp"
             android:fontFamily="sans-serif-black"
@@ -54,7 +54,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.312"
             app:layout_constraintStart_toEndOf="@+id/profil_dosen"
-            app:layout_constraintTop_toBottomOf="@+id/textNama"
+            app:layout_constraintTop_toBottomOf="@+id/namaDetail"
             app:layout_constraintVertical_bias="0.037" />
 
         <TextView

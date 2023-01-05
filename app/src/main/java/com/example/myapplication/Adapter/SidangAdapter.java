@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.datamodels.SeminarsItem;
-import com.example.myapplication.listPermintaanSeminar;
 import com.example.myapplication.listPermintaanSidang;
 
 
@@ -71,7 +70,8 @@ public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.ListViewHo
         String str1 = sidang.getThesis().getStudent().getName();
         String str2 = str1.toLowerCase();
         holder.rvNama.setText(StringFormatter.capitalizeWord(str2));
-        holder.rvJudul.setText(sidang.getThesis().getTitle());
+        holder.rvNim.setText(sidang.getThesis().getStudent().getNim());
+        holder.rvDate.setText(sidang.getThesis().getUpdatedAt());
 
 
 
@@ -98,15 +98,15 @@ public class SidangAdapter extends RecyclerView.Adapter<SidangAdapter.ListViewHo
     public class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView imgPhoto;
-        TextView rvDate, rvNama, rvJudul;
+        TextView rvDate, rvNama, rvNim;
 
 
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgPhoto = itemView.findViewById(R.id.avatar);
+            imgPhoto = itemView.findViewById(R.id.imgDosen);
             rvNama = itemView.findViewById(R.id.rvNama);
-            rvJudul = itemView.findViewById(R.id.rvJudul);
+            rvNim = itemView.findViewById(R.id.rvNIM);
             rvDate = itemView.findViewById(R.id.rvDate);
 
             itemView.setOnClickListener(this);

@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.106" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/dateDetail"
         android:layout_width="146dp"
         android:layout_height="22dp"
         android:fontFamily="sans-serif-black"
@@ -60,11 +60,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.324"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/judulDetail"
         app:layout_constraintVertical_bias="0.02" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/judulDetail"
         android:layout_width="218dp"
         android:layout_height="18dp"
         android:fontFamily="sans-serif-black"
@@ -230,8 +230,9 @@
         app:layout_constraintVertical_bias="0.211" />
 
     <ImageButton
-        android:id="@+id/listmhasiswa"
+        android:id="@+id/dosen"
         android:layout_width="52dp"
+        android:onClick="dosenPenguji"
         android:layout_height="53dp"
         android:backgroundTint="#ffffff"
         android:src="@drawable/user"
@@ -246,13 +247,14 @@
         android:id="@+id/prmintaanta"
         android:layout_width="52dp"
         android:layout_height="53dp"
+        android:layout_marginEnd="64dp"
         android:backgroundTint="#ffffff"
         android:onClick="listta"
         android:src="@drawable/desk"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toEndOf="@+id/listmhasiswa"
+        app:layout_constraintHorizontal_bias="0.841"
+        app:layout_constraintStart_toEndOf="@+id/dosen"
         app:layout_constraintTop_toBottomOf="@+id/btn_jdwlsidang"
         app:layout_constraintVertical_bias="0.582" />
 

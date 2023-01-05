@@ -34,4 +34,9 @@ public interface apiClient {
             @Header("Authorization") String token
     );
 
+    @GET("api/admin/thesis/trial-submissions")
+    Call<SemhasResponse> getDetail(
+            @Header("Authorization") String token
+    );
+
 }

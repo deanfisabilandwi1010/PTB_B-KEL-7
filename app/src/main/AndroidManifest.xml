@@ -54,9 +54,6 @@
             android:name=".detailpermintaanTA"
             android:exported="false" />
         <activity
-            android:name=".listtugasakhir"
-            android:exported="false" />
-        <activity
             android:name=".detailta"
             android:exported="false" />
         <activity

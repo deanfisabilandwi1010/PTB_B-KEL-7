@@ -125,57 +125,54 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
 
     }
 
-    public void jdwlsidang(View view){
-        Intent jdwlsid = new Intent(MainActivity. this,list_jadwalsidang.class);
-        startActivity(jdwlsid);
+//    public void jdwlsidang(View view){
+//        Intent jdwlsid = new Intent(MainActivity. this,list_jadwalsidang.class);
+//        startActivity(jdwlsid);
+//
+//        Intent resultIntent = new Intent(MainActivity.this, list_jadwalsidang.class);
+//
+//        TaskStackBuilder stackBuilder = TaskStackBuilder.create(MainActivity.this);
+//        stackBuilder.addNextIntentWithParentStack(resultIntent);
+//        PendingIntent resultPendingIntent =
+//                stackBuilder.getPendingIntent(0,
+//                        PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+//        NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+//                .setSmallIcon(R.drawable.logounand)
+//                .setContentTitle("Reminder Sidang")
+//                .setContentText("Sidang yang akan datang besok hari!!")
+////                .setContentIntent(resultPendingIntent)
+//                .addAction(R.drawable.logounand, "CEK", resultPendingIntent)
+//                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+//
+//        Notification notification = builder.build();
+//        notificationManager.notify(101,notification);
+//
+//    }
+//
+//    public void jdwlseminar(View view){
+//        Intent jdwlsmnr = new Intent (MainActivity. this,list_jadwalseminar.class);
+//        startActivity(jdwlsmnr);
+//
+//        Intent notifjdwlsmeniar = new Intent(MainActivity.this, list_jadwalseminar.class);
+//
+//        TaskStackBuilder stackBuilder = TaskStackBuilder.create(MainActivity.this);
+//        stackBuilder.addNextIntentWithParentStack(notifjdwlsmeniar);
+//        PendingIntent resultPendingIntent =
+//                stackBuilder.getPendingIntent(0,
+//                        PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+//        NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
+//                .setSmallIcon(R.drawable.logounand)
+//                .setContentTitle("Reminder Seminar")
+//                .setContentText("Seminar yang akan datang besok hari!!")
+////                .setContentIntent(resultPendingIntent)
+//                .addAction(R.drawable.logounand, "CEK", resultPendingIntent)
+//                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+//
+//        Notification notification = builder.build();
+//        notificationManager.notify(101,notification);
+//    }
 
-        Intent resultIntent = new Intent(MainActivity.this, list_jadwalsidang.class);
 
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(MainActivity.this);
-        stackBuilder.addNextIntentWithParentStack(resultIntent);
-        PendingIntent resultPendingIntent =
-                stackBuilder.getPendingIntent(0,
-                        PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.logounand)
-                .setContentTitle("Reminder Sidang")
-                .setContentText("Sidang yang akan datang besok hari!!")
-//                .setContentIntent(resultPendingIntent)
-                .addAction(R.drawable.logounand, "CEK", resultPendingIntent)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-        Notification notification = builder.build();
-        notificationManager.notify(101,notification);
-
-    }
-
-    public void jdwlseminar(View view){
-        Intent jdwlsmnr = new Intent (MainActivity. this,list_jadwalseminar.class);
-        startActivity(jdwlsmnr);
-
-        Intent notifjdwlsmeniar = new Intent(MainActivity.this, list_jadwalseminar.class);
-
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(MainActivity.this);
-        stackBuilder.addNextIntentWithParentStack(notifjdwlsmeniar);
-        PendingIntent resultPendingIntent =
-                stackBuilder.getPendingIntent(0,
-                        PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.logounand)
-                .setContentTitle("Reminder Seminar")
-                .setContentText("Seminar yang akan datang besok hari!!")
-//                .setContentIntent(resultPendingIntent)
-                .addAction(R.drawable.logounand, "CEK", resultPendingIntent)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-        Notification notification = builder.build();
-        notificationManager.notify(101,notification);
-    }
-
-    public void listta(View view){
-        Intent listtamhs = new Intent (MainActivity. this,listtugasakhir.class);
-        startActivity(listtamhs);
-    }
 
     public void permintaanSeminar(View view){
         Intent pSeminar = new Intent (MainActivity. this,listPermintaanSeminar.class);
@@ -185,6 +182,11 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
     public void permintaanSidang(View view){
         Intent pSidang = new Intent (MainActivity. this,listPermintaanSidang.class);
         startActivity(pSidang);
+    }
+
+    public void dosenPenguji(View view){
+        Intent dosen = new Intent (MainActivity. this,listDosenSeminar.class);
+        startActivity(dosen);
     }
 
     private void createNotificationChannel() {

@@ -19,7 +19,7 @@
 
 
         <ImageView
-            android:id="@+id/avatar"
+            android:id="@+id/imgDosen"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="8dp"
@@ -41,12 +41,12 @@
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/avatar"
+            app:layout_constraintStart_toEndOf="@+id/imgDosen"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Sefza Auma" />
 
         <TextView
-            android:id="@+id/rvJudul"
+            android:id="@+id/rvNIM"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -54,9 +54,9 @@
             android:fontFamily="sans-serif-black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/avatar"
+            app:layout_constraintStart_toEndOf="@+id/imgDosen"
             app:layout_constraintTop_toBottomOf="@+id/rvNama"
-            tools:text=" Layanan E-Tugas Akhir Berbasis Android  " />
+            tools:text="2011521016" />
 
         <TextView
             android:id="@+id/rvDate"
@@ -68,8 +68,8 @@
             android:fontFamily="sans-serif-black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/avatar"
-            app:layout_constraintTop_toBottomOf="@+id/rvJudul"
+            app:layout_constraintStart_toEndOf="@+id/imgDosen"
+            app:layout_constraintTop_toBottomOf="@+id/rvNIM"
             tools:text="Selasa, 8 Oktober 2022" />
 
         <CheckBox
