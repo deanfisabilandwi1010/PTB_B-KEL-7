@@ -82,7 +82,7 @@ public class cari_mahasiswa extends AppCompatActivity implements list_mahasiswaA
         ArrayList<Thesis> list_ta = new ArrayList<>();
         System.out.println("token saya : "+token);
         //panggil client
-        Call<ThesesData> call = config.configRetrofit().getListTA("Bearer "+"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vcHRiLWFwaS5odXNuaWxrYW1pbC5teS5pZC9hcGkvbG9naW4iLCJpYXQiOjE2NzI4NTQ0OTIsImV4cCI6MTY3Mjg1ODA5MiwibmJmIjoxNjcyODU0NDkyLCJqdGkiOiJrZEpBMndXVkxhSExwVHYyIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.0JOETD8nV5mbPktUAZaXK09s2hdcjI-Dv7tC3c_C03E");
+        Call<ThesesData> call = config.configRetrofit().getListTA("Bearer "+"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vcHRiLWFwaS5odXNuaWxrYW1pbC5teS5pZC9hcGkvbG9naW4iLCJpYXQiOjE2NzI4NzU5NjYsImV4cCI6MTY3Mjg3OTU2NiwibmJmIjoxNjcyODc1OTY2LCJqdGkiOiJ4UldheFU2aTREQWRLOVlGIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.ZoiVZbiuVfOKRUg8X2R_51IDyWQSgijXEWf2yKXn3VE");
         call.enqueue(new Callback<ThesesData>() {
             @Override
             public void onResponse(Call<ThesesData> call, Response<ThesesData> response) {

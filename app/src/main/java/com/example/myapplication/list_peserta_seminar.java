@@ -44,46 +44,46 @@ public class list_peserta_seminar extends AppCompatActivity implements pesertase
 
         list_ps.add(new pesertaseminar(
 
-                "Ahmad Fauzan",
-                "1911523020"
+                "Muhammad Al Hafiz",
+                "1911523015"
         ));
 
         list_ps.add(new pesertaseminar(
 
-                "Ahmad Fauzan",
-                "1911523020"
+                "M Kevin Beslia",
+                "1911523009"
         ));
 
         list_ps.add(new pesertaseminar(
 
-                "Ahmad Fauzan",
-                "1911523020"
+                "M Rafvy Octa Nugraha",
+                "1911523007"
         ));
 
         list_ps.add(new pesertaseminar(
 
-                "Ahmad Fauzan",
-                "1911523020"
+                "M Farhan Zuhdi",
+                "1911522030"
         ));
         list_ps.add(new pesertaseminar(
 
-                "Ahmad Fauzan",
-                "1911523020"
+                "Fauzan Maizardi",
+                "1911523019"
         ));
         list_ps.add(new pesertaseminar(
 
-                "Ahmad Fauzan",
-                "1911523020"
+                "Dhiya Nabila Denta",
+                "1911523021"
         ));
         list_ps.add(new pesertaseminar(
 
-                "Ahmad Fauzan",
-                "1911523020"
+                "M Afdhal Syafli",
+                "1911523023"
         ));
         list_ps.add(new pesertaseminar(
 
-                "Ahmad Fauzan",
-                "1911523020"
+                "William Wahyu",
+                "1911523001"
         ));
 
 

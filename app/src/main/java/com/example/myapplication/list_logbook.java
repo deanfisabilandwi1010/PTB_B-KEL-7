@@ -39,36 +39,36 @@ public class list_logbook extends AppCompatActivity implements logbookAdapter.It
                 null,
                 null,
                 "20 Oktober 2022",
-                "Merevisi Bab I, bagian latar belakang"
+                "Merevisi Bab 1, Bagian latar belakang"
 
         ));
 
         list_lb.add(new logbook(
                 null,
                 null,
-                "20 Oktober 2022",
-                "Merevisi Bab I, bagian latar belakang"
+                "24 November 2022",
+                "Merevisi Bab 2, Tinjauan Pustaka"
         ));
 
         list_lb.add(new logbook(
                 null,
                 null,
-                "20 Oktober 2022",
-                "Merevisi Bab I, bagian latar belakang"
+                "13 Desember 2022",
+                "Merevisi Bab 3, Metode Penelitian"
         ));
 
         list_lb.add(new logbook(
                 null,
                 null,
-                "20 Oktober 2022",
-                "Merevisi Bab I, bagian latar belakang"
+                "14 Februari 2023",
+                "Merevisi Bab 4, Hasil dan Pembahasan"
         ));
 
         list_lb.add(new logbook(
                 null,
                 null,
-                "20 Oktober 2022",
-                "Merevisi Bab I, bagian latar belakang"
+                "01 Maret 2023",
+                "Merevisi Bab 5, Kesimpulan dan Saran"
         ));
 
 

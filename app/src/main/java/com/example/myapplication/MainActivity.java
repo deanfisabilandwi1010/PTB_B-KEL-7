@@ -64,8 +64,6 @@ public class MainActivity<isloggedin> extends AppCompatActivity {
                     }
                 });
 
-
-
         notificationManager = NotificationManagerCompat.from(this);
 
         createNotificationChannel();
