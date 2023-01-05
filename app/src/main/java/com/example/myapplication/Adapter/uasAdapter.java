@@ -17,9 +17,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class uasAdapter extends RecyclerView.Adapter<uasAdapter.ViewHolder> {
-
+    ItemThesisClickListener listener;
     private List<ThesisItem> itemList = new ArrayList<>();
 
+    public uasAdapter() {
+        this.itemList = itemList;
+        this.listener = listener;
+    }
+
+    public void setListener(ItemThesisClickListener listener) {
+        this.listener = listener;
+    }
     public void setItemList(List<ThesisItem> itemList) {
         this.itemList = itemList;
         notifyDataSetChanged();
@@ -45,13 +53,17 @@ public class uasAdapter extends RecyclerView.Adapter<uasAdapter.ViewHolder> {
         }
     }
 
+    public interface ItemThesisClickListener{
+        void onItemThesisClick(ThesisItem thesisItem);
+    }
+
     @Override
     public int getItemCount() {
         return itemList.size();
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView TextJudulTA, TextId, textDate;
         public ImageView CheckIMG;
 
@@ -61,6 +73,13 @@ public class uasAdapter extends RecyclerView.Adapter<uasAdapter.ViewHolder> {
             textDate = itemView.findViewById(R.id.txt_idtanggal);
             CheckIMG = itemView.findViewById(R.id.checklist);
 
+            itemView.setOnClickListener(this);
         }
-}
+
+        @Override
+        public void onClick(View view) {
+            ThesisItem thesisItem = itemList.get(getAdapterPosition());
+            listener.onItemThesisClick(thesisItem);
+        }
+    }
 }

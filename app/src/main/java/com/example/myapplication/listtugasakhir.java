@@ -28,7 +28,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class listtugasakhir extends AppCompatActivity {
+public class listtugasakhir extends AppCompatActivity implements uasAdapter.ItemThesisClickListener{
     private RecyclerView rvta;
     private uasAdapter adapter;
 
@@ -46,6 +46,7 @@ public class listtugasakhir extends AppCompatActivity {
 
         rvta.setLayoutManager(layoutManager);
         adapter = new uasAdapter();
+        adapter.setListener(this);
         rvta.setAdapter(adapter);
 
         String API_BASE_URL = "http://ptb-api.husnilkamil.my.id";
@@ -58,7 +59,7 @@ public class listtugasakhir extends AppCompatActivity {
 
         apiClient client = retrofit.create(apiClient.class);
 
-        Call<PermintaanTAResponse> call = client.getPTA("Bearer " + token);
+        Call<PermintaanTAResponse> call = client.getPTA( "Bearer " + token);
         call.enqueue(new Callback<PermintaanTAResponse>() {
 
 
@@ -81,6 +82,16 @@ public class listtugasakhir extends AppCompatActivity {
     public void bekk(View view){
         Intent back = new Intent(listtugasakhir. this,MainActivity.class);
         startActivity(back);
+    }
+
+    @Override
+    public void onItemThesisClick(ThesisItem thesisItem) {
+        Intent intentTA = new Intent(this,halaman_TA.class);
+        intentTA.putExtra("JudulTA", thesisItem.getTitle());
+        intentTA.putExtra("nama", (CharSequence) thesisItem.getStudent());
+        intentTA.putExtra("tanggal", thesisItem.getCreatedAt());
+        intentTA.putExtra("abstrak", (CharSequence) thesisItem.getJsonMemberAbstract());
+        startActivity(intentTA);
     }
 
 //    public ArrayList<ta_mahasiswa> getlist_TA(){

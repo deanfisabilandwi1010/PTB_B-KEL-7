@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".halaman_TA"
+            android:exported="false" />
+        <activity
             android:name=".listMahasiswaTA"
             android:exported="false" />
         <activity
