@@ -43,7 +43,7 @@ public class Thesis{
 	@SerializedName("status")
 	private int status;
 
-	public Student getStudent(int position){
+	public Student getStudent(){
 		return student;
 	}
 

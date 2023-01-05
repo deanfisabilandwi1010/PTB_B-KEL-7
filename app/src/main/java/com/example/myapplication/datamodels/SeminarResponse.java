@@ -3,7 +3,7 @@ package com.example.myapplication.datamodels;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class Response{
+public class SeminarResponse {
 
 	@SerializedName("seminars")
 	private List<SeminarsItem> seminars;

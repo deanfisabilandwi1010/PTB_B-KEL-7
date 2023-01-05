@@ -2,7 +2,7 @@ package com.example.myapplication.retrofit;
 
 import com.example.myapplication.datamodels.LoginResponse;
 import com.example.myapplication.datamodels.LogoutResponse;
-import com.example.myapplication.datamodels.SeminarsItem;
+import com.example.myapplication.datamodels.SeminarResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -24,7 +24,7 @@ public interface apiClient {
     );
 
     @GET("/api/admin/thesis/seminar-submissions")
-    Call<SeminarsItem> getSidang(
+    Call<SeminarResponse> getSidang(
             @Header("Authorization") String token
     );
 

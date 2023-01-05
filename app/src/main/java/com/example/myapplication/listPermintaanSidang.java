@@ -1,32 +1,31 @@
 package com.example.myapplication;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.Adapter.SidangAdapter;
-import com.example.myapplication.datamodels.LogoutResponse;
+import com.example.myapplication.datamodels.SeminarResponse;
 import com.example.myapplication.datamodels.SeminarsItem;
 import com.example.myapplication.retrofit.apiClient;
 import com.example.myapplication.retrofit.RetrofitClient;
+import com.example.myapplication.datamodels.Thesis;
+import com.example.myapplication.datamodels.Student;
+
+
 
 
 import java.util.List;
 
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 
 
 public class listPermintaanSidang extends AppCompatActivity {
@@ -68,21 +67,26 @@ public class listPermintaanSidang extends AppCompatActivity {
         gettoken = sharedPreferences.getString("tokenLogin","");
         tokenLogin = "Bearer " + gettoken;
 
-        Call<SeminarsItem> call = mainInterface.getSidang(tokenLogin);
-        call.enqueue(new Callback<SeminarsItem>() {
+        Call<SeminarResponse> call = RetrofitClient.getService().getSidang(tokenLogin);
+        call.enqueue(new Callback<SeminarResponse>() {
             @Override
-            public void onResponse(Call<SeminarsItem> call, Response<SeminarsItem> response) {
-                List<SeminarsItem> sidangList = (List<SeminarsItem>) response.body().getThesis();
-                adapter = new SidangAdapter(listPermintaanSidang.this, sidangList);
+            public void onResponse(Call<SeminarResponse> call, Response<SeminarResponse> response) {
+
+                SeminarResponse seminars = response.body();
+                if (seminars != null){
+                    List<SeminarsItem> seminarsItemList = seminars.getSeminars();
+                    adapter = new SidangAdapter(listPermintaanSidang.this, seminarsItemList );
+
+                    recyclerView.setAdapter(adapter);
 
 
+                }
 
-                recyclerView.setAdapter(adapter);
 
             }
 
             @Override
-            public void onFailure(Call<SeminarsItem> call, Throwable t) {
+            public void onFailure(Call<SeminarResponse> call, Throwable t) {
 
             }
 
